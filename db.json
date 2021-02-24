@@ -4,15 +4,8 @@
       "id": 1,
       "message": "Change network card in server 008",
       "attention": false,
-      "tech": "John Doe",
-      "date": "2021-02-24T14:46:48.262Z"
-    },
-    {
-      "id": 2,
-      "message": "Fixed Hard Drive on workstation 002",
-      "attention": false,
-      "tech": "Sara Wilson",
-      "date": "2021-02-24T14:47:08.532Z"
+      "tech": "Tomás Catena",
+      "date": "2021-02-24T16:14:07.085Z"
     },
     {
       "message": "1122 wireless down",
@@ -37,11 +30,6 @@
       "id": 3,
       "firstName": "Sara",
       "lastName": "Wilson"
-    },
-    {
-      "firstName": "Tomás",
-      "lastName": "Catena",
-      "id": 4
     }
   ]
 }
