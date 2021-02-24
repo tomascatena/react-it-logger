@@ -10,6 +10,9 @@ import {
   SEARCH_LOGS,
 } from './types';
 
+const url =
+  'https://my-json-server.typicode.com/tomascatena/react-it-logger-json-server';
+
 // export const getLogs = () => {
 //   return async (dispatch, getState) => {
 //     setLoading();
@@ -29,7 +32,7 @@ export const getLogs = () => async (dispatch) => {
   try {
     setLoading();
 
-    const res = await fetch('/logs');
+    const res = await fetch(`${url}/logs`);
     const data = await res.json();
 
     dispatch({
@@ -49,7 +52,7 @@ export const addLog = (log) => async (dispatch) => {
   try {
     setLoading();
 
-    const res = await fetch('/logs', {
+    const res = await fetch(`${url}/logs`, {
       method: 'POST',
       body: JSON.stringify(log),
       headers: {
@@ -75,7 +78,7 @@ export const deleteLog = (id) => async (dispatch) => {
   try {
     setLoading();
 
-    await fetch(`/logs/${id}`, {
+    await fetch(`${url}/logs/${id}`, {
       method: 'DELETE',
     });
 
@@ -96,7 +99,7 @@ export const updateLog = (log) => async (dispatch) => {
   try {
     setLoading();
 
-    const res = await fetch(`/logs/${log.id}`, {
+    const res = await fetch(`${url}/logs/${log.id}`, {
       method: 'PUT',
       body: JSON.stringify(log),
       headers: {
@@ -122,7 +125,7 @@ export const searchLogs = (text) => async (dispatch) => {
   try {
     setLoading();
 
-    const res = await fetch(`/logs?q=${text}`);
+    const res = await fetch(`${url}/logs?q=${text}`);
     const data = await res.json();
 
     dispatch({

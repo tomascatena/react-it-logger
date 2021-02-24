@@ -6,12 +6,15 @@ import {
   TECHS_ERROR,
 } from './types';
 
+const url =
+  'https://my-json-server.typicode.com/tomascatena/react-it-logger-json-server';
+
 // Get techs from server
 export const getTechs = () => async (dispatch) => {
   try {
     setLoading();
 
-    const res = await fetch('/techs');
+    const res = await fetch(`${url}/techs`);
     const data = await res.json();
 
     dispatch({
@@ -31,7 +34,7 @@ export const addTech = (tech) => async (dispatch) => {
   try {
     setLoading();
 
-    const res = await fetch('/techs', {
+    const res = await fetch(`${url}/techs`, {
       method: 'POST',
       body: JSON.stringify(tech),
       headers: {
@@ -57,7 +60,7 @@ export const deleteTech = (id) => async (dispatch) => {
   try {
     setLoading();
 
-    await fetch(`/techs/${id}`, {
+    await fetch(`${url}/techs/${id}`, {
       method: 'DELETE',
     });
 
